@@ -1,6 +1,7 @@
-Kohana 3.2 client library for the MailChimp API v1.3.1. 
+Kohana 3.3 client library for the MailChimp API v1.3.1. 
 
 Forked and modified from original KohanaPHP v 2.x extension https://github.com/djaiss/kohana-mailchimp
+Forked and modified from upgrade to 3.2 to support Kohana 3.3
 
 Based on http://www.mailchimp.com/api/downloads/
 
@@ -12,11 +13,12 @@ Edit application/config/mailchimp.php and add your Mailchimp.com API key and lis
 ### Subscribe a user
 
 	$mc_instance = new Mailchimp();
+	$mc_instance->MCAPI(Kohana::$config->load('mailchimp.api_key'));
 	$first_name = ''; // first name of the user
 	$last_name = ''; // last name of the user
 	$email = ''; // email address of the user
 	$merge_vars = array('FNAME' => $first_name, 'LNAME'=> $last_name);
-	$retval = $mc_instance->listSubscribe(Kohana::config('mailchimp.list_id'), $email, $merge_vars, 'html', false);
+	$retval = $mc_instance->listSubscribe(Kohana::$config->load('mailchimp.list_id'), $email, $merge_vars, 'html', false);
 	if ($mailChimpInstance->errorCode) {
 		// there was an error, let's log it
 		Kohana::log('error', "Unable to load listUpdateMember. \t

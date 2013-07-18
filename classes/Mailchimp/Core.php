@@ -4,7 +4,7 @@
  * Mailchimp library.
  *
  * @package    kohana-mailchimp
- * @author     Regis Freyd (v2.x) modified by Emir Beganovic (v3.x)
+ * @author     Regis Freyd (v2.x) modified by Emir Beganovic (v3.x) modified by Kerkness (v3.3)
  * 
  */
 class Mailchimp_Core {
